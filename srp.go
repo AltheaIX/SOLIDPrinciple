@@ -3,7 +3,7 @@ package main
 import "os"
 
 /*
-File Management with SRP Principle
+File Management with Single Responsibility Principle
 Checked and reviewed by ChatGPT
 */
 

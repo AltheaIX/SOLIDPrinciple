@@ -2,6 +2,11 @@ package main
 
 import "fmt"
 
+/*
+Payment Processing System with Single Responsibility Principle and Open-Closed Principle
+Checked and reviewed by ChatGPT
+*/
+
 type PaymentMethod interface {
 	ProcessPayment(amount float64) error
 	RefundPayment(amount float64) error

@@ -2,6 +2,11 @@ package main
 
 import "testing"
 
+/*
+Payment Processing System with Single Responsibility Principle and Open-Closed Principle
+Checked and reviewed by ChatGPT
+*/
+
 func TestCreditCardPaymentMethod_ProcessPayment(t *testing.T) {
 	paymentProcessor := NewPaymentProcessor("creditcard")
 	err := paymentProcessor.ProcessPayment(150000)

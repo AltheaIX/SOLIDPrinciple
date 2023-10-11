@@ -8,7 +8,7 @@ Checked and reviewed by ChatGPT
 */
 
 func TestCreditCardPaymentMethod_ProcessPayment(t *testing.T) {
-	paymentProcessor := NewPaymentProcessor(CreditCard)
+	paymentProcessor := NewPaymentProcessor("creditcard")
 	err := paymentProcessor.ProcessPayment(150000)
 	if err != nil {
 		t.Errorf("[TestCreditCardPaymentMethod_ProcessPayment] %v", err)
@@ -16,7 +16,7 @@ func TestCreditCardPaymentMethod_ProcessPayment(t *testing.T) {
 }
 
 func TestCreditCardPaymentMethod_RefundPayment(t *testing.T) {
-	paymentProcessor := NewPaymentProcessor(CreditCard)
+	paymentProcessor := NewPaymentProcessor("creditcard")
 	err := paymentProcessor.RefundPayment(150000)
 	if err != nil {
 		t.Errorf("[TestCreditCardPaymentMethod_RefundPayment] %v", err)
@@ -24,7 +24,7 @@ func TestCreditCardPaymentMethod_RefundPayment(t *testing.T) {
 }
 
 func TestPayPalPaymentMethod_ProcessPayment(t *testing.T) {
-	paymentProcessor := NewPaymentProcessor(PayPal)
+	paymentProcessor := NewPaymentProcessor("paypal")
 	err := paymentProcessor.ProcessPayment(150000)
 	if err != nil {
 		t.Errorf("[TestPayPalPaymentMethod_ProcessPayment] %v", err)
@@ -32,7 +32,7 @@ func TestPayPalPaymentMethod_ProcessPayment(t *testing.T) {
 }
 
 func TestPayPalPaymentMethod_RefundPayment(t *testing.T) {
-	paymentProcessor := NewPaymentProcessor(PayPal)
+	paymentProcessor := NewPaymentProcessor("paypal")
 	err := paymentProcessor.RefundPayment(150000)
 	if err != nil {
 		t.Errorf("[TestPayPalPaymentMethod_RefundPayment] %v", err)

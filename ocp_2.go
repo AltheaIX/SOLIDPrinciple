@@ -7,6 +7,11 @@ Payment Processing System with Single Responsibility Principle and Open-Closed P
 Checked and reviewed by ChatGPT
 */
 
+const (
+	CreditCard string = "creditcard"
+	PayPal            = "paypal"
+)
+
 type PaymentMethod interface {
 	ProcessPayment(amount float64) error
 	RefundPayment(amount float64) error
@@ -52,9 +57,9 @@ func (p *PaymentProcessor) RefundPayment(amount float64) error {
 
 func NewPaymentProcessor(method string) PaymentMethod {
 	switch method {
-	case "creditcard":
+	case CreditCard:
 		return &PaymentProcessor{paymentMethod: &CreditCardPaymentMethod{}}
-	case "paypal":
+	case PayPal:
 		return &PaymentProcessor{paymentMethod: &PayPalPaymentMethod{}}
 	default:
 		return nil
